@@ -13,11 +13,8 @@
 <header class="topbar"><div><p class="eyebrow">CASHFLOW 101</p><h1>Multiplayer Lobby</h1></div><span id="connectionBadge" class="badge offline">Offline</span></header>
 
 <section id="setupCard" class="card">
-<h2>Connect to the realtime server</h2>
-<p class="muted">Use your Supabase project URL and publishable/anon key. They are stored only in this browser.</p>
-<label>Supabase URL<input id="supabaseUrl" type="url" placeholder="https://your-project.supabase.co"></label>
-<label>Publishable / anon key<input id="supabaseKey" type="password" placeholder="sb_publishable_... or anon key"></label>
-<button id="connectBtn" class="primary">Connect</button>
+<h2>Connecting to the realtime server</h2>
+<p class="muted">Supabase is configured securely through the Vercel environment variables for this deployment.</p>
 <p id="setupError" class="error"></p>
 </section>
 
@@ -36,6 +33,6 @@
 </div>
 </section>
 </main>
-<script type="module" src="./app.js"></script>
+<script type="module" src="/app.js"></script>
 </body>
 </html>

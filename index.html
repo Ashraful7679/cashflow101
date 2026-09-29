@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0f172a">
+<meta name="description" content="Cashflow 101 multiplayer game room.">
+<title>Cashflow 101 | Multiplayer</title>
+<link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+<main class="app-shell">
+<header class="topbar"><div><p class="eyebrow">CASHFLOW 101</p><h1>Multiplayer Lobby</h1></div><span id="connectionBadge" class="badge offline">Offline</span></header>
+
+<section id="setupCard" class="card">
+<h2>Connect to the realtime server</h2>
+<p class="muted">Use your Supabase project URL and publishable/anon key. They are stored only in this browser.</p>
+<label>Supabase URL<input id="supabaseUrl" type="url" placeholder="https://your-project.supabase.co"></label>
+<label>Publishable / anon key<input id="supabaseKey" type="password" placeholder="sb_publishable_... or anon key"></label>
+<button id="connectBtn" class="primary">Connect</button>
+<p id="setupError" class="error"></p>
+</section>
+
+<section id="lobbyCard" class="card hidden">
+<div class="room-actions"><p class="muted">Your name</p><div class="name-row"><input id="playerName" maxlength="24" placeholder="Player name"><button id="saveNameBtn" class="secondary">Save</button></div></div>
+<div class="room-grid">
+<div class="room-panel"><span class="muted">Create a room</span><button id="createRoomBtn" class="primary">Create Room</button></div>
+<div class="room-panel"><span class="muted">Join by code</span><div class="join-row"><input id="roomCodeInput" maxlength="6" placeholder="ABC123"><button id="joinRoomBtn" class="secondary">Join</button></div></div>
+</div>
+
+<div id="activeRoom" class="active-room hidden">
+<div class="room-header"><div><span class="muted">Room code</span><strong id="roomCodeLabel">------</strong></div><div class="room-buttons"><button id="copyRoomBtn" class="secondary">Copy Code</button><button id="leaveRoomBtn" class="danger">Leave</button></div></div>
+<div class="room-status"><div><span class="muted">Players</span><strong id="playerCount">0</strong></div><div><span class="muted">Host</span><strong id="hostLabel">Waiting...</strong></div><div><span class="muted">Game phase</span><strong id="phaseLabel">Lobby</strong></div></div>
+<div class="players-section"><div class="section-heading"><h2>Players</h2><button id="readyBtn" class="primary">Ready</button></div><div id="playersList" class="players-list"></div></div>
+<div class="connection-note"><span class="pulse"></span>Changes are synchronized in real time.</div>
+</div>
+</section>
+</main>
+<script type="module" src="./app.js"></script>
+</body>
+</html>
